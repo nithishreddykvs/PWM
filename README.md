@@ -1,96 +1,95 @@
-# PWM
-Pulse Width Modulation (PWM) Generator
-This repository contains the Verilog implementation of a Pulse Width Modulation (PWM) generator. The PWM generator is designed to control the duty cycle of a signal using buttons, making it suitable for applications like motor speed control, LED brightness adjustment, and more.
+PWM - Pulse Width Modulation Generator
 
-Features
+This repository contains the Verilog implementation of a Pulse Width Modulation (PWM) generator. The PWM generator allows users to control the duty cycle of a signal using buttons, making it suitable for applications such as motor speed control, LED brightness adjustment, and more.
 
-1.Adjustable Duty Cycle:
+📌 Features
 
-  The duty cycle can be adjusted from 0% to 90% in 10% increments.
-  Two buttons (increase and decrease) are used to adjust the duty cycle.
+✅ Adjustable Duty Cycle
 
-2.Debouncing Logic:
+The duty cycle can be adjusted from 0% to 90% in 10% increments.
+Two buttons (increase and decrease) control the duty cycle.
 
-  Mechanical button presses are debounced using D flip-flops to ensure stable input signals.
+✅ Debouncing Logic
 
-3.Clock Division:
+Mechanical button presses are debounced using D flip-flops to ensure stable input signals.
 
-  A 50MHz input clock is divided down to generate a 5MHz PWM output signal.
+✅ Clock Division
 
-4.Reset Functionality:
+A 50MHz input clock is divided down to generate a 5MHz PWM output signal.
 
-  A reset signal initializes the system, setting the duty cycle to 0%.
+✅ Reset Functionality
 
-5.Simulation Testbench:
+A reset signal initializes the system, setting the duty cycle to 0%.
 
-  A testbench is provided to simulate and verify the functionality of the PWM generator.
+✅ Simulation Testbench
 
-How It Works
+A testbench is provided to simulate and verify the functionality of the PWM generator.
 
-Clock Input:
+⚙️ How It Works
 
-  The design uses a 50MHz clock input.
-  The clock is divided down to generate a 5MHz PWM output signal.
+🔹 Clock Input
 
-Duty Cycle Control:
+The design uses a 50MHz clock input.
+The clock is divided down to generate a 5MHz PWM output signal.
 
-  The duty cycle is stored in a 4-bit register.
-  
-  Pressing the increase button increments the duty cycle by 10%.
-  
-  Pressing the decrease button decrements the duty cycle by 10%.
+🔹 Duty Cycle Control
 
-PWM Signal Generation:
+The duty cycle is stored in a 4-bit register.
+Pressing the increase button → increments duty cycle by 10%.
+Pressing the decrease button → decrements duty cycle by 10%.
 
-  A counter compares its value to the duty cycle register.
-  
-  If the counter value is less than the duty cycle, the PWM output is HIGH.
-  
-  Otherwise, the PWM output is LOW.
+🔹 PWM Signal Generation
 
-Debouncing:
+A counter compares its value to the duty cycle register.
+If the counter value < duty cycle, the PWM output is HIGH.
+Otherwise, the PWM output is LOW.
 
-  Button inputs are debounced to filter out noise and ensure stable operation.
+🔹 Debouncing
 
-Usage
+Button inputs are debounced to filter out noise and ensure stable operation.
 
-Simulation:
+🚀 Usage
 
-  Use a simulation tool like Vivado or ModelSim to run the testbench (PWM_tb.v).
-  
-  Verify the PWM output waveform and duty cycle adjustment.
+🔹 Simulation
 
-Synthesis:
+Use a simulation tool like Vivado or ModelSim to run the testbench (PWM_tb.v).
+Verify the PWM output waveform and duty cycle adjustments.
 
-  Synthesize the PWM.v module for implementation on an FPGA.
+🔹 Synthesis
 
-Testing:
+Synthesize the PWM.v module for implementation on an FPGA.
 
-  Connect the PWM output to a load (e.g., LED or motor) and test the functionality using the increase and decrease buttons.
+🔹 Testing
 
-Simulation Results
+Connect the PWM output to a load (e.g., LED or motor).
+Use the increase and decrease buttons to adjust the PWM duty cycle.
 
-  *Default Duty Cycle: 0% (PWM output is LOW).
-  
-  *After Increasing Duty Cycle: PWM output stays HIGH for a longer duration.
-  
-  *After Decreasing Duty Cycle: PWM output stays HIGH for a shorter duration.
+📊 Simulation Results
 
-Dependencies
+✅ Default Duty Cycle: 0% → PWM output is LOW.
 
-Simulation Tools:
+✅ After Increasing Duty Cycle: PWM output stays HIGH for a longer duration.
 
-Vivado (Xilinx) or ModelSim (Mentor Graphics).
+✅ After Decreasing Duty Cycle: PWM output stays HIGH for a shorter duration.
 
-FPGA Boards:
+📂 Dependencies
 
-Compatible with any FPGA board that supports Verilog.
+🔹 Simulation Tools
 
-Contributing:
-Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+Vivado (Xilinx) or ModelSim (Mentor Graphics)
 
+🔹 FPGA Boards
 
-Author
+Compatible with any FPGA board that supports Verilog
+
+🤝 Contributing
+
+Contributions are welcome! 🎉
+
+If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+👤 Author
+
 Nithish Reddy KVS
-nithishreddy.k.v.s@gmail.com
 
+📧 Email: nithishreddy.k.v.s@gmail.com
